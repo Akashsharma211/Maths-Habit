@@ -6,8 +6,8 @@ import { X, Ticket } from 'lucide-react';
 export default function DemoModal({ isOpen, onClose, courseTitle, onToast }) {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
-  const [grade, setGrade] = useState('Class 9-10 (CBSE)');
-  const [board, setBoard] = useState('CBSE');
+  const [grade, setGrade] = useState('IGCSE Grade 9–10 (Cambridge Extended)');
+  const [board, setBoard] = useState('Cambridge IGCSE Extended (0580)');
 
   if (!isOpen) return null;
 
@@ -23,8 +23,8 @@ export default function DemoModal({ isOpen, onClose, courseTitle, onToast }) {
         <button className="modal-close" onClick={onClose}><X size={20} /></button>
         <div className="modal-header">
           <Ticket className="modal-icon" size={36} />
-          <h3>Demo: {courseTitle || 'Free Live Demo Class'}</h3>
-          <p>Reserve your seat for Class 6th to 10th (CBSE & IGCSE) live interactive batch.</p>
+          <h3>Demo: {courseTitle || 'Free Live IGCSE Demo Class'}</h3>
+          <p>Reserve your seat for Cambridge & Edexcel IGCSE (Grades 6–10) live interactive batch.</p>
         </div>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
@@ -38,31 +38,33 @@ export default function DemoModal({ isOpen, onClose, courseTitle, onToast }) {
             />
           </div>
           <div className="form-group">
-            <label>WhatsApp Phone Number</label>
+            <label>Contact Phone Number / WhatsApp</label>
             <input 
               type="tel" 
               required 
-              placeholder="+91 98765 43210"
+              placeholder="+44 7700 900077 or +971 50 123 4567"
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
             />
           </div>
           <div className="form-row grid grid-2">
             <div className="form-group">
-              <label>Current Class</label>
+              <label>Current Grade / Level</label>
               <select value={grade} onChange={(e) => setGrade(e.target.value)} required>
-                <option value="Class 6th">Class 6th</option>
-                <option value="Class 7th">Class 7th</option>
-                <option value="Class 8th">Class 8th</option>
-                <option value="Class 9th">Class 9th</option>
-                <option value="Class 10th">Class 10th</option>
+                <option value="IGCSE Grade 9–10 (Cambridge Extended)">IGCSE Grade 9–10 (Cambridge Extended)</option>
+                <option value="IGCSE Grade 9–10 (Additional Math 0606)">IGCSE Grade 9–10 (Additional Math 0606)</option>
+                <option value="Grade 8 (Cambridge Checkpoint)">Grade 8 (Cambridge Checkpoint)</option>
+                <option value="Grade 6–7 (Cambridge Lower Secondary)">Grade 6–7 (Cambridge Lower Secondary)</option>
               </select>
             </div>
             <div className="form-group">
-              <label>Education Board</label>
+              <label>IGCSE Program / Board</label>
               <select value={board} onChange={(e) => setBoard(e.target.value)} required>
-                <option value="CBSE Board">CBSE Board</option>
-                <option value="IGCSE Cambridge">IGCSE Cambridge</option>
+                <option value="Cambridge IGCSE Extended (0580)">Cambridge IGCSE Extended (0580)</option>
+                <option value="Cambridge IGCSE Additional Math (0606)">Cambridge IGCSE Additional Math (0606)</option>
+                <option value="Cambridge IGCSE Core (0580)">Cambridge IGCSE Core (0580)</option>
+                <option value="Edexcel International GCSE (4MA1 / 4PM1)">Edexcel International GCSE (4MA1 / 4PM1)</option>
+                <option value="Cambridge Lower Secondary Checkpoint">Cambridge Lower Secondary Checkpoint</option>
               </select>
             </div>
           </div>

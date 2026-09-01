@@ -28,7 +28,7 @@ export default function JoinSection({ onToast }) {
               <span class="section-tag light-tag">Book Your Seat</span>
               <h2 class="join-title">Experience the Difference in a <span class="text-gradient-gold">Free Live Demo Class</span></h2>
               <p class="join-desc">
-                Don&apos;t just take our word for it. Attend a <strong>1-Hour Live Interactive Trial Class</strong> with Anu Mam. No credit card required.
+                Don&apos;t just take our word for it. Attend a <strong>1-Hour Live Interactive Cambridge IGCSE Trial Class</strong> with Anu Mam. No credit card required.
               </p>
 
               <div class="demo-highlights">
@@ -38,18 +38,18 @@ export default function JoinSection({ onToast }) {
                 </div>
                 <div class="demo-hl-item">
                   <CheckCircle2 size={18} />
-                  <span>Free PDF Formula Master Cheat-Sheet</span>
+                  <span>Free Cambridge IGCSE Formula Master Cheat-Sheet</span>
                 </div>
                 <div class="demo-hl-item">
                   <CheckCircle2 size={18} />
-                  <span>Personal Academic Audit & Score Roadmap</span>
+                  <span>Personal IGCSE Academic Audit & A* Score Roadmap</span>
                 </div>
               </div>
 
               <div class="live-counter-box">
                 <Flame class="counter-icon" size={28} />
                 <div>
-                  <span class="counter-title">Limited Slots Available for Next Demo Batch</span>
+                  <span class="counter-title">Limited Slots Available for Next IGCSE Demo Batch</span>
                   <span class="counter-subtitle">Only <strong>4 Free Demo Seats Remaining</strong> for this week!</span>
                 </div>
               </div>
@@ -57,7 +57,7 @@ export default function JoinSection({ onToast }) {
 
             <div class="join-form-wrapper">
               <form class="demo-form" onSubmit={handleSubmit}>
-                <h3 class="form-title">Register for Free Demo Class</h3>
+                <h3 class="form-title">Register for Free IGCSE Demo Class</h3>
                 <p class="form-subtitle">Fill in details to receive instant WhatsApp demo link & schedule.</p>
 
                 <div class="form-group">
@@ -83,7 +83,7 @@ export default function JoinSection({ onToast }) {
                       type="tel" 
                       id="parent-phone" 
                       required 
-                      placeholder="+91 98765 43210"
+                      placeholder="+44 7700 900077 or +971 50 123 4567"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     />
@@ -92,36 +92,35 @@ export default function JoinSection({ onToast }) {
 
                 <div class="form-row grid grid-2">
                   <div class="form-group">
-                    <label htmlFor="student-grade">Current Class/Grade *</label>
+                    <label htmlFor="student-grade">Current Grade / Level *</label>
                     <select 
                       id="student-grade" 
                       required
                       value={formData.grade}
                       onChange={(e) => setFormData({ ...formData, grade: e.target.value })}
                     >
-                      <option value="">Select Grade</option>
-                      <option value="Class 9">Class 9th</option>
-                      <option value="Class 10">Class 10th</option>
-                      <option value="Class 11">Class 11th</option>
-                      <option value="Class 12">Class 12th</option>
-                      <option value="Dropper">Dropper / Target JEE/NEET</option>
+                      <option value="">Select Grade / Level</option>
+                      <option value="IGCSE Grade 9–10 (Extended Math 0580)">IGCSE Grade 9–10 (Extended Math 0580)</option>
+                      <option value="IGCSE Grade 9–10 (Additional Math 0606)">IGCSE Grade 9–10 (Additional Math 0606)</option>
+                      <option value="Grade 8 (Cambridge Checkpoint)">Grade 8 (Cambridge Checkpoint)</option>
+                      <option value="Grade 6–7 (Cambridge Lower Secondary)">Grade 6–7 (Cambridge Lower Secondary)</option>
                     </select>
                   </div>
 
                   <div class="form-group">
-                    <label htmlFor="target-subject">Primary Subject *</label>
+                    <label htmlFor="target-subject">Primary IGCSE Program *</label>
                     <select 
                       id="target-subject" 
                       required
                       value={formData.subject}
                       onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                     >
-                      <option value="">Select Subject</option>
-                      <option value="Science">Science Complete</option>
-                      <option value="Mathematics">Mathematics</option>
-                      <option value="Physics">Physics (11/12)</option>
-                      <option value="Chemistry">Chemistry (11/12)</option>
-                      <option value="JEE/NEET Combined">JEE / NEET Prep</option>
+                      <option value="">Select IGCSE Subject</option>
+                      <option value="Cambridge IGCSE Extended Math (0580)">Cambridge IGCSE Extended Math (0580)</option>
+                      <option value="Cambridge IGCSE Additional Math (0606)">Cambridge IGCSE Additional Math (0606)</option>
+                      <option value="Cambridge IGCSE Core Math (0580)">Cambridge IGCSE Core Math (0580)</option>
+                      <option value="Edexcel International GCSE Math (4MA1)">Edexcel International GCSE Math (4MA1)</option>
+                      <option value="Cambridge Lower Secondary Checkpoint (Grades 6–8)">Cambridge Lower Secondary Checkpoint (Grades 6–8)</option>
                     </select>
                   </div>
                 </div>

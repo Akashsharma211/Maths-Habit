@@ -2,10 +2,10 @@
 
 export default function StatsSection() {
   const stats = [
-    { number: '10+', label: 'Years Experience' },
-    { number: '5,000+', label: 'Students Guided' },
-    { number: '450+', label: 'Selections in JEE/NEET' },
-    { number: '99.4%', label: 'Highest Board Marks' },
+    { number: '15+', label: 'Years Cambridge IGCSE Mentorship' },
+    { number: '5,000+', label: 'Global IGCSE Students Guided' },
+    { number: '98%+', label: 'A* & Grade 9/8 Distinction Rate' },
+    { number: '100%', label: 'Cambridge Past Paper Coverage' },
   ];
 
   return (

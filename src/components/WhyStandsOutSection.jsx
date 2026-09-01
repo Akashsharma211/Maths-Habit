@@ -7,17 +7,17 @@ export default function WhyStandsOutSection() {
     {
       icon: <Brain size={70} color="#14B8A6" />,
       bgClass: 'bg-blob-purple',
-      caption: "Reasoning: Building deep conceptual understanding without rote learning"
+      caption: "Reasoning: Building deep Cambridge IGCSE conceptual understanding without blind formula rote learning"
     },
     {
       icon: <Target size={70} color="#F59E0B" />,
       bgClass: 'bg-blob-mint',
-      caption: "Problem Solving: 3-Tier practice sets from NCERT to JEE Advanced level"
+      caption: "Problem Solving: 3-Tier IGCSE practice sheets from foundation concepts to Paper 2 & Paper 4 exam mastery"
     },
     {
       icon: <Sparkles size={70} color="#0F766E" />,
       bgClass: 'bg-blob-cyan',
-      caption: "Application: Real-world speed shortcuts for 100/100 board scores & top ranks"
+      caption: "Application: Real-world speed shortcuts for Cambridge IGCSE A* grades, 100% exam accuracy & top global ranks"
     }
   ];
 
@@ -38,12 +38,6 @@ export default function WhyStandsOutSection() {
               <p className="why-caption">{f.caption}</p>
             </div>
           ))}
-        </div>
-
-        {/* Carousel Dots */}
-        <div className="carousel-dots" style={{ marginTop: '3.5rem' }}>
-          <div className="dot active"></div>
-          <div className="dot"></div>
         </div>
 
       </div>

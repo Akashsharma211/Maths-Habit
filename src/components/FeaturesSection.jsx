@@ -14,31 +14,31 @@ export default function FeaturesSection() {
       icon: <Brain size={26} />,
       gradient: 'icon-gradient-2',
       title: 'Visual & Conceptual Learning',
-      desc: 'No blind memorization! Abstract topics in Physics and Math are taught using animated diagrams, graphs, and real-world experiments.'
+      desc: 'No blind memorization! Complex topics in Cambridge IGCSE Math (Circle Theorems, Trigonometry, Vectors & Calculus) are taught with intuitive visual proofs.'
     },
     {
       icon: <Headphones size={26} />,
       gradient: 'icon-gradient-3',
-      title: 'Instant Live Doubt Resolution',
-      desc: 'Dedicated daily 30-minute post-class doubt resolution desks plus an active WhatsApp group monitored by Anu Mam.'
+      title: 'Instant 1-on-1 Doubt Resolution',
+      desc: 'Dedicated daily 30-minute post-class doubt desks plus an active Cambridge past paper WhatsApp helpline monitored personally by Anu Mam.'
     },
     {
       icon: <FileText size={26} />,
       gradient: 'icon-gradient-4',
-      title: 'Handcrafted Study Material & Notes',
-      desc: 'Concise formula mind maps, chapter summary cheatsheets, and top-tier question banks delivered right to your doorstep & PDF portal.'
+      title: 'Handcrafted IGCSE Revision Materials',
+      desc: 'Concise formula mind maps, Paper 2/4 topical past paper booklets (0580 & 0606), and Cambridge examiner mark-scheme guides.'
     },
     {
       icon: <LineChart size={26} />,
       gradient: 'icon-gradient-5',
-      title: 'Weekly Mock Tests & Analytics',
-      desc: 'Simulated exam pattern tests with instant subject-wise strength & weakness reports sent to students & parents.'
+      title: 'Weekly IGCSE Mock Tests & Analytics',
+      desc: 'Rigorous timed mock tests graded strictly against Cambridge examiner rubrics with deep strength & weakness insights.'
     },
     {
       icon: <Users size={26} />,
       gradient: 'icon-gradient-6',
       title: 'Parent-Teacher Transparency',
-      desc: 'Monthly 1-on-1 virtual PTMs to discuss attendance, test performance trends, and motivational guidance.'
+      desc: 'Monthly 1-on-1 virtual PTMs to discuss attendance, IGCSE test score trends, and targeted A* improvement plans.'
     }
   ];
 

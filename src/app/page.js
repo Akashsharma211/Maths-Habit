@@ -17,6 +17,7 @@ export default function Home() {
   const [demoModalOpen, setDemoModalOpen] = useState(false);
   const [selectedCourse, setSelectedCourse] = useState('Free Live Demo');
   const [toastMessage, setToastMessage] = useState(null);
+  const [activeRole, setActiveRole] = useState('student');
 
   const handleOpenDemo = (courseName = 'Free Live Demo') => {
     setSelectedCourse(courseName);
@@ -24,10 +25,11 @@ export default function Home() {
   };
 
   const handleRoleChange = (role, gradeDetail) => {
+    setActiveRole(role);
     if (role === 'parent') {
-      triggerToast('👪 Parent Portal Mode Active! Monitoring Progress Reports.');
+      triggerToast('👪 Parent Portal Mode Active! Monitoring IGCSE Progress Reports.');
     } else {
-      triggerToast(`👤 Student Mode Active (${gradeDetail || 'Class 9-10'})`);
+      triggerToast(`👤 Student Mode Active (${gradeDetail || 'IGCSE Grades 9–10'})`);
     }
   };
 
@@ -39,10 +41,10 @@ export default function Home() {
   };
 
   return (
-    <main style={{ backgroundColor: '#FFFFFF', minHeight: '100vh' }}>
-      <Header onRoleChange={handleRoleChange} />
-      <HeroSection onOpenDemo={handleOpenDemo} />
-      <WhoIsAnu onOpenDemo={handleOpenDemo} />
+    <main style={{ backgroundColor: '#FAF7F2', minHeight: '100vh' }}>
+      <Header activeRole={activeRole} onRoleChange={handleRoleChange} />
+      <HeroSection activeRole={activeRole} onOpenDemo={handleOpenDemo} onRoleChange={handleRoleChange} />
+      <WhoIsAnu onOpenDemo={handleOpenDemo} isHomePage={true} />
       <CoursesSection onOpenDemo={handleOpenDemo} />
       <AnnouncementsSection onOpenDemo={handleOpenDemo} />
       <WhyStandsOutSection />

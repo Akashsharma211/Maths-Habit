@@ -1,4 +1,4 @@
-'use client';
+import Link from 'next/link';
 
 export default function AssistBanner({ onOpenDemo }) {
   return (
@@ -9,12 +9,12 @@ export default function AssistBanner({ onOpenDemo }) {
           <div className="assist-left-content">
             <h2 className="assist-title">HAPPY TO ASSIST YOU!</h2>
             <p className="assist-desc">
-              Need guidance choosing the right Maths Habit batch for your target goal? Our expert academic counsellor Anu Mam is here to help!
+              Need guidance choosing between IGCSE Core vs Extended (0580) or Additional Mathematics (0606)? Our expert Cambridge academic mentor Anu Mam is here to help!
             </p>
 
-            <button className="btn-ask-experts" onClick={() => onOpenDemo('Expert Academic Counselling')}>
+            <Link href="/contact" className="btn-ask-experts" style={{ display: 'inline-block', textAlign: 'center', textDecoration: 'none' }}>
               Ask To Experts
-            </button>
+            </Link>
           </div>
 
           <div className="assist-counsellor-arch">

@@ -14,6 +14,7 @@ export default function MeetAnuPage() {
   const [demoModalOpen, setDemoModalOpen] = useState(false);
   const [selectedCourse, setSelectedCourse] = useState('Free Live Demo');
   const [toastMessage, setToastMessage] = useState(null);
+  const [activeRole, setActiveRole] = useState('student');
 
   const handleOpenDemo = (courseName = 'Free Live Demo') => {
     setSelectedCourse(courseName);
@@ -21,10 +22,11 @@ export default function MeetAnuPage() {
   };
 
   const handleRoleChange = (role, gradeDetail) => {
+    setActiveRole(role);
     if (role === 'parent') {
-      triggerToast('👪 Parent Portal Mode Active!');
+      triggerToast('👪 Parent Portal Mode Active! Monitoring IGCSE Progress Reports.');
     } else {
-      triggerToast(`👤 Student Mode Active (${gradeDetail || 'Class 9-10'})`);
+      triggerToast(`👤 Student Mode Active (${gradeDetail || 'IGCSE Grades 9–10'})`);
     }
   };
 
@@ -37,7 +39,7 @@ export default function MeetAnuPage() {
 
   return (
     <main style={{ backgroundColor: '#FFFFFF', minHeight: '100vh' }}>
-      <Header onRoleChange={handleRoleChange} />
+      <Header activeRole={activeRole} onRoleChange={handleRoleChange} />
       
       {/* Back to Home Breadcrumb Bar */}
       <div style={{ background: '#FAF9F6', padding: '1rem 0', borderBottom: '1px solid #E6F7F5' }}>

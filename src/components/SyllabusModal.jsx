@@ -6,28 +6,31 @@ export default function SyllabusModal({ isOpen, onClose, courseTitle, onOpenDemo
   if (!isOpen) return null;
 
   const syllabusData = {
-    'Class 9th & 10th Super Foundation': [
-      { unit: 'Physics (Units 1-4)', desc: 'Motion, Force, Gravitation, Work & Energy, Light Reflection & Refraction' },
-      { unit: 'Chemistry (Units 1-3)', desc: 'Matter in Our Surroundings, Chemical Reactions & Equations, Acids & Bases' },
-      { unit: 'Mathematics (Units 1-5)', desc: 'Real Numbers, Polynomials, Linear Equations, Triangles, Trigonometry' },
-      { unit: 'Olympiad Extra', desc: 'Advanced Problem Solving Techniques & Speed Mental Drills' }
+    'IGCSE Extended Mathematics (0580 / 0980)': [
+      { unit: 'Number & Algebra', desc: 'Indices, Standard Form, Algebraic Fractions, Linear/Quadratic Equations, Sequences, Inequalities' },
+      { unit: 'Coordinate Geometry & Functions', desc: 'Gradients, Midpoints, Linear & Quadratic Functions, Composite & Inverse Functions, Curve Sketching' },
+      { unit: 'Geometry, Trigonometry & Vectors', desc: 'Circle Theorems, Bearings, 2D/3D Trigonometry, Sine & Cosine Rules, Vector Geometry' },
+      { unit: 'Mensuration, Statistics & Probability', desc: 'Surface Areas & Volumes, Arc Length/Sector Area, Cumulative Frequency, Histograms, Conditional Probability' },
+      { unit: 'Past Paper Mastery (Paper 2 & Paper 4)', desc: '10-Year Cambridge past paper breakdown with official examiner marking scheme analysis' }
     ],
-    'Class 11 & 12 Physics Mastermind': [
-      { unit: 'Class 11 Physics Core', desc: 'Vectors, Kinematics, Laws of Motion, Rotational Dynamics, Thermodynamics' },
-      { unit: 'Class 12 Physics Core', desc: 'Electrostatics, Current Electricity, Electromagnetic Induction, Wave Optics, Modern Physics' },
-      { unit: 'Lab & Derivation Drills', desc: 'Complete Board Practical Viva & Step-by-Step Derivation Masterclasses' }
+    'Cambridge IGCSE Additional Math (0606)': [
+      { unit: 'Functions, Quadratics & Logarithms', desc: 'Simultaneous Equations, Logarithmic and Exponential Functions, Modulus Functions' },
+      { unit: 'Circular Measure & Trigonometry', desc: 'Radian Measures, Arc Length & Sector Area, Trigonometric Identities & Equations' },
+      { unit: 'Permutations, Combinations & Series', desc: 'Binomial Theorem, Arithmetic & Geometric Progressions, Combinatorics' },
+      { unit: 'Calculus: Differentiation & Integration', desc: 'Derivatives of Trig/Exp/Log, Product/Quotient/Chain Rule, Tangents & Normals, Definite & Indefinite Integrals, Kinematics' }
     ],
-    'NEET/JEE Target Batch': [
-      { unit: 'Mechanics & Electrodynamics', desc: 'High-Yield Numerical Drills & PYQ Shortcuts (Last 15 Years Exam Papers)' },
-      { unit: 'Physical & Organic Chemistry', desc: 'Mole Concept, Electrochemistry, Reaction Mechanisms, Periodic Trends' },
-      { unit: 'Speed Test CBT Simulations', desc: 'Weekly 3-Hour Computer Based Tests with Instant All-India Rank Analysis' }
+    'Cambridge Lower Secondary Checkpoint (Grade 8)': [
+      { unit: 'Number & Calculation', desc: 'Integers, Powers & Roots, Fractions, Decimals, Percentages, Ratio and Proportion' },
+      { unit: 'Algebra & Graphs', desc: 'Constructing Expressions, Solving Equations, Linear Graphs, Sequences and Formulae' },
+      { unit: 'Geometry & Measure', desc: 'Angles, 2D/3D Shapes, Pythagoras Theorem, Area, Perimeter and Volume' },
+      { unit: 'Statistics, Probability & Checkpoint Drills', desc: 'Averages, Probability Trees, Venn Diagrams & Stage 9 Progression Test Papers' }
     ]
   };
 
   const units = syllabusData[courseTitle] || [
-    { unit: 'Unit 1: Core Fundamentals', desc: 'Comprehensive coverage of core concepts, theory, and NCERT exemplars.' },
-    { unit: 'Unit 2: Problem Solving Drills', desc: 'Targeted PYQs, formula cheat-sheets, and sample paper problem practice.' },
-    { unit: 'Unit 3: Exam Strategy Workshops', desc: 'Time-management, diagram drawing techniques, and mock test evaluations.' }
+    { unit: 'Unit 1: Cambridge Core Fundamentals', desc: 'Comprehensive coverage of IGCSE syllabus concepts, theorems, and intuitive graphical methods.' },
+    { unit: 'Unit 2: 3-Tier Topical Practice Sheets', desc: 'Targeted Cambridge past-paper questions categorized by difficulty and question type.' },
+    { unit: 'Unit 3: Examiner Mark Scheme Drills', desc: 'Time-management strategies, structured multi-step working, and zero-mark-loss exam layouts.' }
   ];
 
   return (

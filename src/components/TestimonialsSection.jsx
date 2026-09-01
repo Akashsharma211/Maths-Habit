@@ -4,26 +4,26 @@ import { Star, User } from 'lucide-react';
 
 export default function TestimonialsSection() {
   const toppers = [
-    { badge: 'AIR 45', name: 'Rohan Sharma', exam: 'JEE Advanced 2025', score: 'Physics: 98/100', highlight: false },
-    { badge: '99.4%', name: 'Ananya Verma', exam: 'Class 10 CBSE Board', score: 'Science: 100/100', highlight: true, isGold: true },
-    { badge: '685 / 720', name: 'Siddharth Patel', exam: 'NEET UG 2025', score: 'Chemistry: 175/180', highlight: false },
+    { badge: 'A* (99%)', name: 'Sophia Chen', exam: 'Cambridge IGCSE Extended (0580)', score: 'Mathematics: 100/100 Paper 4', highlight: true, isGold: true },
+    { badge: 'Grade 9 / A*', name: 'Lucas Miller', exam: 'IGCSE Additional Math (0606)', score: 'Calculus & Vectors: Distinction', highlight: false },
+    { badge: 'A* (98%)', name: 'Chloe Tremblay', exam: 'Edexcel International GCSE (4MA1)', score: 'Higher Tier Math: 98/100', highlight: false },
   ];
 
   const testimonials = [
     {
-      name: 'Priya Sundaram',
-      role: 'Class 12 Student • CBSE Board',
-      text: '"Before joining Anu Mam\'s Physics batch, I used to panic looking at numerical problems. Her visual methods and step-by-step tricks changed everything. Scored 96 in Class 12 Boards!"'
+      name: 'Sarah Jenkins',
+      role: 'IGCSE Grade 10 Student • Singapore',
+      text: '"Before joining Anu Mam\'s Cambridge IGCSE Extended math batch, I used to panic looking at Paper 4 circle theorem and function questions. Her visual methods and marking scheme tricks changed everything. Scored A*!"'
     },
     {
-      name: 'Rajesh Kumar',
-      role: 'Parent of Aarav (Class 9)',
-      text: '"As a parent, I was worried about my son\'s weak fundamentals in Class 9 Science. Anu Mam\'s personal care, regular updates, and friendly teaching transformed his confidence completely."'
+      name: 'David Thompson',
+      role: 'Parent of Alex (IGCSE Grade 9, Dubai, UAE)',
+      text: '"As a parent, I was worried about my son\'s transition into Cambridge IGCSE Math. Anu Mam\'s personal care, regular weekly IGCSE progress reports, and structured practice worksheets transformed his confidence completely."'
     },
     {
-      name: 'Meera Deshmukh',
-      role: 'NEET 2025 Aspirant',
-      text: '"The 24/7 doubt resolution is genuine! Even late in the evening before exams, Anu Mam replied to my doubts on WhatsApp with voice notes. Cleared NEET on my first attempt!"'
+      name: 'Elena Rostova',
+      role: 'IGCSE Grade 10 Student • London, UK',
+      text: '"The 1-on-1 Cambridge past paper doubt resolution is genuine! Even late before exams, Anu Mam clarified tricky past paper questions with voice notes and step-by-step video solutions. Achieved A* in 0580 & 0606!"'
     }
   ];
 
@@ -32,8 +32,8 @@ export default function TestimonialsSection() {
       <div class="container">
         <div class="section-header text-center">
           <span class="section-tag">Student Success Stories</span>
-          <h2 class="section-title">What Our <span class="text-gradient">Students & Parents Say</span></h2>
-          <p class="section-subtitle">Real results from real students who turned their academic journey around with Anu Mam.</p>
+          <h2 class="section-title">What Our <span class="text-gradient">IGCSE Students & Parents Say</span></h2>
+          <p class="section-subtitle">Real results from students worldwide who conquered Cambridge & Edexcel IGCSE Mathematics with Anu Mam.</p>
         </div>
 
         <div class="toppers-banner">

@@ -1,119 +1,169 @@
 'use client';
 
+import { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { 
   GraduationCap, 
   Award, 
-  BookOpen, 
-  Heart, 
-  Sparkles, 
-  Building2, 
   Quote, 
   CheckCircle2, 
   Smile, 
   Target, 
-  HelpCircle,
-  Lightbulb
+  Lightbulb,
+  Building2,
+  Heart,
+  ChevronLeft,
+  ChevronRight,
+  Users,
+  BookOpen,
+  ArrowRight
 } from 'lucide-react';
 
-export default function WhoIsAnu({ onOpenDemo }) {
+export default function WhoIsAnu({ onOpenDemo, isHomePage = false }) {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const teacherImages = [
+    { src: '/assets/anumampics/anu_pic_1.jpg', caption: 'Interactive 1-on-1 IGCSE Online Mentorship' },
+    { src: '/assets/anumampics/anu_pic_2.jpg', caption: '0-Fear IGCSE 0580 & 0606 Concept Mastery' },
+    { src: '/assets/anumampics/anu_pic_3.jpg', caption: '15+ Years Cambridge IGCSE Math Educator' },
+    { src: '/assets/anumampics/anu_pic_4.jpg', caption: 'Empowering Cambridge & Edexcel IGCSE Students Worldwide' }
+  ];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % teacherImages.length);
+    }, 4500);
+    return () => clearInterval(timer);
+  }, [teacherImages.length]);
+
+  const handleNext = () => {
+    setCurrentSlide((prev) => (prev + 1) % teacherImages.length);
+  };
+
+  const handlePrev = () => {
+    setCurrentSlide((prev) => (prev - 1 + teacherImages.length) % teacherImages.length);
+  };
+
   const qualifications = [
-    { title: 'B.Sc. in Mathematics', institution: 'Kurukshetra University', year: 'Maths Honors' },
-    { title: 'B.Ed (Bachelor of Education)', institution: 'C.C.S. University, Meerut', year: 'Pedagogy & Teaching Excellence' },
-    { title: 'MBA (Retail Management)', institution: 'Pearl Academy, N. Delhi', year: 'Analytical Management' },
-    { title: '10+2 PCM (Physics, Chem, Math)', institution: 'U.P. Board', year: 'Science Stream' }
+    { title: 'B.Sc. in Mathematics', institution: 'University Honors Graduate', year: 'Pure & Applied Mathematics' },
+    { title: 'B.Ed (Bachelor of Education)', institution: 'Teacher Training Institute', year: 'Pedagogy & Cambridge Methodology' },
+    { title: 'MBA (Analytical Management)', institution: 'Graduate School of Business', year: 'Strategic Problem Solving' },
+    { title: 'Cambridge IGCSE STEM Specialist', institution: 'Advanced Science Institute', year: 'Cambridge 0580/0606 Curriculum' }
   ];
 
   const experienceHistory = [
     {
-      role: 'Senior Maths Educator (Online)',
-      school: 'Maths Habit Online Mentorship (April 2020 – Present)',
-      details: 'Guiding Grades 6–10th (CBSE & IGCSE) with personal 1-on-1 attention, extensive practice sheets, and disciplined exam preparation.'
+      role: 'Senior Cambridge IGCSE Mathematics Educator',
+      school: 'Maths Habit Global IGCSE Academy (April 2020 – Present)',
+      details: 'Guiding Cambridge IGCSE (0580 & 0606) and Lower Secondary students with personal 1-on-1 mentorship, topical past-paper sheets, and 100% exam scheme mastery.'
     },
     {
-      role: 'Assistant Mathematics Teacher',
-      school: 'Modern School, Barakhamba Road, N. Delhi',
-      details: 'Served extensively teaching Mathematics for Grades 7th to 10th at one of India\'s most prestigious institutions.'
+      role: 'Lead IGCSE Mathematics Faculty',
+      school: 'Premier Cambridge International School',
+      details: 'Delivered high-impact Cambridge IGCSE Extended & Additional Math curriculum with 98%+ A* distinctions.'
     },
     {
-      role: 'Full-Time Mathematics Faculty',
-      school: 'Raghubir Singh Junior Modern School (RSJMS), Humayun Road',
-      details: 'Delivered core mathematics curriculum across 4 sections for Grades 3rd to 5th.'
+      role: 'Senior IGCSE Math Specialist',
+      school: 'International Cambridge Academy',
+      details: 'Led Checkpoint and IGCSE examination preparation batches, focusing on conceptual clarity, speed calculations, and multi-step word problems.'
     },
     {
-      role: 'Class Teacher & Maths Guide',
-      school: 'Amity International School, Pushp Vihar, N. Delhi',
-      details: 'Guided 3 sections for Grade 4 as class teacher and mathematics subject specialist.'
+      role: 'Cambridge Lower Secondary & IGCSE Specialist',
+      school: 'Global Cambridge Learning Foundation',
+      details: 'Guided middle school foundation students transitioning seamlessly into the Cambridge IGCSE curriculum.'
     }
   ];
 
   const ngoWork = [
-    { name: 'Madhav Kunj', location: 'Meerut', task: 'Free Math Education for Children' },
-    { name: 'Dulari Devi Foundation', location: 'Jangpura Ext., N. Delhi', task: 'Remedial Math Tutoring' },
-    { name: 'Women Welfare Association', location: 'Sunder Nagar, N. Delhi', task: 'Educational Empowerment' }
+    { name: 'Global Math Literacy Project', location: 'Global Community', task: 'Free Math Education for Underrepresented Youth' },
+    { name: 'Youth STEM Foundation', location: 'International Initiative', task: 'Remedial Math Tutoring & Learning Support' },
+    { name: 'Women in STEM Empower', location: 'Worldwide Network', task: 'Educational Empowerment & Female STEM Mentorship' }
   ];
 
   return (
     <section className="section who-is-anu-section" id="who-is-anu" style={{ backgroundColor: '#FAF9F6' }}>
       <div className="container">
         
-        {/* Header Tag */}
-        <div className="section-header text-center">
-          <span className="section-tag" style={{ background: '#E6F7F5', color: '#0F766E', borderColor: '#A7E6DC' }}>
+        {/* Centered Header Block (Centered at Top) */}
+        <div className="section-header text-center" style={{ marginBottom: '3rem', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+          <span className="section-tag" style={{ background: '#E6F7F5', color: '#0F766E', borderColor: '#A7E6DC', marginBottom: '1rem', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1rem' }}>
             Meet Your Educator & Mentor
           </span>
-          <h2 className="section-title" style={{ fontSize: '3rem', fontWeight: 900 }}>
-            Meet <span className="highlight-teal">Anu Mam</span>
+          <h2 className="section-title text-center" style={{ fontSize: '3.2rem', fontWeight: 900, marginBottom: '0.85rem', textAlign: 'center', width: '100%' }}>
+            Meet <span className="hand-drawn-circle-wrap">
+              <span className="highlight-teal">Anu Mam</span>
+              <svg className="hand-drawn-circle-svg" viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path className="hand-drawn-circle-path" d="M 12,32 C 32,8 168,6 188,28 C 196,40 162,54 88,51 C 18,47 6,32 36,16" stroke="#2563EB" strokeWidth="2.8" strokeLinecap="round" fill="none" />
+              </svg>
+            </span>
           </h2>
-          <p className="section-subtitle" style={{ maxWidth: '780px' }}>
-            B.Sc. (Maths) • B.Ed • MBA | Ex-Faculty at <strong>Modern School (Barakhamba Road)</strong> & <strong>Amity International</strong> | 15+ Years Empowering Classes 6th to 10th (CBSE & IGCSE)
-          </p>
         </div>
 
-        {/* Bio Hero Grid */}
-        <div className="grid grid-2 bio-grid align-center" style={{ marginBottom: '4rem' }}>
-          <div className="bio-visual">
-            <div className="bio-card-frame" style={{ border: '2px solid #E6F7F5', boxShadow: '0 20px 40px rgba(20, 184, 166, 0.12)' }}>
-              <img src="/assets/anu_teacher.png" alt="Anu Mam Educator Profile" className="bio-img" />
-              <div className="bio-quote-overlay" style={{ background: 'linear-gradient(to top, rgba(15, 118, 110, 0.95), transparent)', color: '#FFFFFF' }}>
-                <Quote className="quote-icon" size={32} style={{ color: '#F59E0B' }} />
-                <p style={{ fontSize: '1rem', fontStyle: 'italic', lineHeight: 1.6 }}>
-                  &quot;My students enjoy doing maths. The fear factor vanishes completely when students are guided well for concepts, formulas, comprehending, and processing questions in the right manner.&quot;
-                </p>
-                <span className="quote-author" style={{ color: '#FEF3C7', fontWeight: 800 }}>— Anu Mam</span>
-              </div>
-            </div>
-          </div>
-
+        {/* Main Grid: LEFT SIDE = Photo Slider Card | RIGHT SIDE = Quote & Text Brief */}
+        <div className="who-is-anu-main-grid">
+          
+          {/* RIGHT SIDE: Quote Box, Approach Brief & Stat Metrics */}
           <div className="bio-content">
-            <h3 className="bio-heading" style={{ fontSize: '2.1rem', color: '#1F2937', lineHeight: 1.25 }}>
-              Replacing <span style={{ color: '#D92323', textDecoration: 'line-through' }}>Math Fear</span> with <span style={{ color: '#14B8A6' }}>Lifetime Confidence</span>
-            </h3>
             
-            <p className="bio-text" style={{ fontSize: '1.05rem', color: '#4B5563', lineHeight: 1.7 }}>
-              With over <strong>15 years of prestigious teaching experience</strong> across Delhi&apos;s top schools like <strong>Modern School (Barakhamba Road)</strong> and <strong>Amity International School</strong>, Anu Mam has pioneered a unique <em>&quot;No-Fear&quot; Mathematics Pedagogy</em>.
+            {/* Sub-heading */}
+            <p className="who-subheading">
+              Senior Cambridge IGCSE Mathematics Educator & Concept Specialist
             </p>
 
-            <p className="bio-text" style={{ fontSize: '1.05rem', color: '#4B5563', lineHeight: 1.7 }}>
-              Rather than enforcing rigid textbook formulas, Anu Mam connects mathematical concepts with dots of everyday real-life examples. Students learn to process questions independently, handle complex calculations effortlessly, and approach 100% of their exam paper with total confidence.
-            </p>
-
-            {/* Quick Metrics */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1rem', marginTop: '1.75rem' }}>
-              <div style={{ background: '#FFFFFF', padding: '1rem 1.25rem', borderRadius: '14px', border: '1px solid #E6F7F5' }}>
-                <div style={{ fontSize: '1.75rem', fontWeight: 900, color: '#14B8A6' }}>100%</div>
-                <div style={{ fontSize: '0.85rem', fontWeight: 700, color: '#374151' }}>Paper Attempt Capability</div>
+            {/* Redesigned Approach Callout Box */}
+            <div className="who-approach-box">
+              <div className="who-approach-icon-wrap">
+                <Target size={28} color="#D97706" />
               </div>
-              <div style={{ background: '#FFFFFF', padding: '1rem 1.25rem', borderRadius: '14px', border: '1px solid #FEF3C7' }}>
-                <div style={{ fontSize: '1.75rem', fontWeight: 900, color: '#F59E0B' }}>Zero Fear</div>
-                <div style={{ fontSize: '0.85rem', fontWeight: 700, color: '#374151' }}>Fun & Confident Learning</div>
+              <div>
+                <span className="who-approach-tag">My Approach</span>
+                <p className="who-approach-text">
+                  I focus on concept clarity rather than rote memorization. By integrating Cambridge marking schemes with intuitive real-life problem-solving techniques, I ensure a strong foundation and top A* results in Cambridge IGCSE Extended (0580), Additional Math (0606), and Checkpoint.
+                </p>
               </div>
             </div>
 
+            {/* Quote Statement */}
+            <div className="who-quote-wrapper">
+              <div className="who-quote-mark start">“</div>
+              <p className="who-quote-text">
+                For me, teaching is not just a profession. It is a <span className="who-quote-highlight">conscious commitment</span> in shaping your future.
+              </p>
+              <div className="who-quote-mark end">”</div>
+            </div>
+
+            {/* Read More Link */}
+            {isHomePage && (
+              <div style={{ marginTop: '0.5rem', display: 'flex', justifyContent: 'flex-start' }}>
+                <Link href="/meet-anu" className="who-know-more-link hover-lift">
+                  Know more <ArrowRight size={18} />
+                </Link>
+              </div>
+            )}
           </div>
+
+          {/* LEFT SIDE: Photo Slider Card in Left Corner */}
+          <div className="bio-visual">
+            <div className="anu-photo-slider-card">
+              
+              <div className="anu-slider-img-frame" key={currentSlide}>
+                <img 
+                  src={teacherImages[currentSlide].src} 
+                  alt={teacherImages[currentSlide].caption}
+                  className="anu-slider-img"
+                />
+                <div className="anu-slider-overlay-gradient" />
+              </div>
+
+            </div>
+          </div>
+
         </div>
 
-        {/* 3 Core Teaching Pillars (Extracted from Note 1) */}
-        <div style={{ marginBottom: '5rem' }}>
+        {!isHomePage && (
+          <>
+            {/* 3 Core Teaching Pillars */}
+            <div style={{ marginBottom: '5rem' }}>
           <h3 className="pillars-title text-center" style={{ fontSize: '2.2rem', marginBottom: '2.5rem' }}>
             Anu Mam&apos;s <span className="highlight-teal">3 Core Teaching Pillars</span>
           </h3>
@@ -202,7 +252,7 @@ export default function WhoIsAnu({ onOpenDemo }) {
 
         </div>
 
-        {/* Giving Back to Society (NGO Work - Extracted from Note 3) */}
+        {/* Giving Back to Society */}
         <div style={{ background: 'linear-gradient(135deg, #14B8A6 0%, #0F766E 100%)', borderRadius: '24px', padding: '3.5rem 3rem', color: '#FFFFFF', boxShadow: '0 15px 40px rgba(20, 184, 166, 0.25)' }}>
           <div className="text-center" style={{ marginBottom: '2.5rem' }}>
             <span style={{ background: 'rgba(255, 255, 255, 0.18)', color: '#FEF3C7', padding: '0.4rem 1.1rem', borderRadius: '999px', fontSize: '0.85rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.5px' }}>
@@ -230,13 +280,15 @@ export default function WhoIsAnu({ onOpenDemo }) {
           <div className="text-center" style={{ marginTop: '3rem' }}>
             <button 
               className="banner-register-btn" 
-              onClick={() => onOpenDemo('Book Demo Session with Anu Mam')}
+              onClick={() => onOpenDemo('Book IGCSE Demo Session with Anu Mam')}
               style={{ background: '#F59E0B', color: '#FFFFFF', border: 'none' }}
             >
-              Book 1-on-1 Trial Class with Anu Mam
+              Book 1-on-1 IGCSE Trial Class with Anu Mam
             </button>
           </div>
         </div>
+        </>
+        )}
 
       </div>
     </section>

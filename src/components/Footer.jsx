@@ -1,90 +1,146 @@
 'use client';
 
-import { MapPin, Phone, Mail, ChevronsRight } from 'lucide-react';
+import Link from 'next/link';
+import { MapPin, Phone, Mail, ChevronRight, MessageSquare } from 'lucide-react';
 
 export default function Footer() {
   return (
     <footer className="motion-footer">
       <div className="container">
         
-        <div className="footer-5col-grid">
+        <div className="footer-featured-grid">
           
-          <div className="footer-col">
-            <div style={{ marginBottom: '1.5rem' }}>
-              <a href="#" className="motion-brand">
+          {/* Column 1: Brand & Bio */}
+          <div className="footer-col brand-col">
+            <Link href="/" className="footer-brand-link">
+              <div className="footer-logo-circle">
                 <img 
                   src="/assets/bike_logo.png" 
-                  alt="Maths Habit Bicycle Logo" 
-                  className="brand-bike-icon-img" 
-                  style={{ height: '72px' }}
+                  alt="Maths Habit Logo" 
+                  className="footer-bike-img" 
                 />
-                <div className="brand-text-block">
-                  <span className="brand-title-main" style={{ fontSize: '1.5rem' }}>
-                    MATHS <span className="brand-title-accent">HABIT</span>
-                  </span>
-                  <span className="brand-tagline-sub" style={{ fontSize: '0.6rem' }}>
-                    REASONING • PROBLEM SOLVING • APPLICATION
-                  </span>
-                </div>
-              </a>
-            </div>
+              </div>
+              <span className="footer-brand-title">
+                MATHS <span className="highlight-teal">HABIT</span>
+              </span>
+            </Link>
+            
+            <p className="footer-brand-desc">
+              Premier Cambridge & Edexcel IGCSE Mathematics online academy led by Senior Educator Anu Mam. Building 0-fear conceptual mastery and guaranteed A* results.
+            </p>
+
+            <a 
+              href="https://wa.me/18005556284?text=Hi%20Anu%20Mam,%20I%20want%20to%20know%20more%20about%20your%20IGCSE%20Mathematics%20classes!"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-whatsapp-btn"
+            >
+              <MessageSquare size={15} />
+              <span>WhatsApp Admission Desk</span>
+            </a>
+          </div>
+
+          {/* Column 2: Featured Navigation */}
+          <div className="footer-col">
+            <h4 className="footer-col-title">Featured Pages</h4>
             <ul className="footer-col-list">
-              <li><a href="#"><ChevronsRight size={14} /> Why Maths Habit</a></li>
-              <li><a href="#"><ChevronsRight size={14} /> About Anu Mam</a></li>
-              <li><a href="#"><ChevronsRight size={14} /> Academics Team</a></li>
-              <li><a href="#"><ChevronsRight size={14} /> CBSE/IGCSE Brochure</a></li>
+              <li>
+                <Link href="/meet-anu">
+                  <ChevronRight size={14} className="footer-chevron" />
+                  <span>Meet Anu Mam</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/#courses">
+                  <ChevronRight size={14} className="footer-chevron" />
+                  <span>IGCSE Courses & Batches</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/#who-is-anu">
+                  <ChevronRight size={14} className="footer-chevron" />
+                  <span>Why Maths Habit</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/#testimonials">
+                  <ChevronRight size={14} className="footer-chevron" />
+                  <span>Results & Reviews</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact">
+                  <ChevronRight size={14} className="footer-chevron" />
+                  <span>Contact & Admissions</span>
+                </Link>
+              </li>
             </ul>
           </div>
 
+          {/* Column 3: Featured IGCSE Pathways */}
           <div className="footer-col">
-            <h4 className="footer-col-title">Target Boards</h4>
+            <h4 className="footer-col-title">Featured IGCSE Batches</h4>
             <ul className="footer-col-list">
-              <li><a href="#"><ChevronsRight size={14} /> CBSE Board (Class 6-10)</a></li>
-              <li><a href="#"><ChevronsRight size={14} /> IGCSE Cambridge (Grade 6-10)</a></li>
-              <li><a href="#"><ChevronsRight size={14} /> IGCSE Checkpoint</a></li>
-              <li><a href="#"><ChevronsRight size={14} /> Math & STEM Olympiad</a></li>
+              <li>
+                <Link href="/#courses">
+                  <ChevronRight size={14} className="footer-chevron" />
+                  <span>IGCSE Extended Math (0580)</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/#courses">
+                  <ChevronRight size={14} className="footer-chevron" />
+                  <span>Cambridge Additional Math (0606)</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/#courses">
+                  <ChevronRight size={14} className="footer-chevron" />
+                  <span>Edexcel International GCSE (4MA1)</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/#courses">
+                  <ChevronRight size={14} className="footer-chevron" />
+                  <span>Cambridge Checkpoint (Grades 6–8)</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/#courses">
+                  <ChevronRight size={14} className="footer-chevron" />
+                  <span>10-Year Past Paper Masterclass</span>
+                </Link>
+              </li>
             </ul>
           </div>
 
+          {/* Column 4: Direct Contact */}
           <div className="footer-col">
-            <h4 className="footer-col-title">Contact Us</h4>
-            <ul className="footer-col-list">
-              <li><a href="#"><ChevronsRight size={14} /> Contact Us</a></li>
-              <li><a href="#"><ChevronsRight size={14} /> Enquiry</a></li>
-              <li><a href="#"><ChevronsRight size={14} /> Be A Partner</a></li>
-              <li><a href="#"><ChevronsRight size={14} /> Parent Portal</a></li>
-            </ul>
-          </div>
-
-          <div className="footer-col">
-            <h4 className="footer-col-title">Popular Batches</h4>
-            <ul className="footer-col-list">
-              <li><a href="#courses">CBSE Class 9 & 10 Foundation</a></li>
-              <li><a href="#courses">IGCSE Grade 9 & 10 Math</a></li>
-              <li><a href="#courses">CBSE Class 6th-8th STEM</a></li>
-              <li><a href="#courses">IGCSE Grade 6-8 Lower Sec</a></li>
-              <li><a href="#courses">CBSE Class 10 Board 100/100</a></li>
-            </ul>
-          </div>
-
-          <div className="footer-col">
-            <h4 className="footer-col-title">Corporate Office</h4>
+            <h4 className="footer-col-title">Global Admissions</h4>
             <div className="footer-contact-info">
               <p>
-                <MapPin size={16} style={{ color: '#14B8A6', flexShrink: 0 }} />
-                <span>394, Rajeev Gandhi Nagar Kota, Rajasthan 324005 / Sector 14, New Delhi</span>
+                <MapPin size={16} className="contact-icon" />
+                <span>Online Global Academy • Serving Students in UK, UAE, Singapore & Europe</span>
               </p>
               <p>
-                <Phone size={16} style={{ color: '#14B8A6', flexShrink: 0 }} />
-                <span>18002121799 / +91 98765 43210</span>
+                <Phone size={16} className="contact-icon" />
+                <a href="tel:+442079460912">+44 20 7946 0912 / +1 (800) 555-MATH</a>
               </p>
               <p>
-                <Mail size={16} style={{ color: '#14B8A6', flexShrink: 0 }} />
-                <span>info@mathshabit.com</span>
+                <Mail size={16} className="contact-icon" />
+                <a href="mailto:info@mathshabit.com">info@mathshabit.com</a>
               </p>
             </div>
           </div>
 
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="footer-bottom-bar">
+          <p>© {new Date().getFullYear()} Maths Habit Academy. All rights reserved.</p>
+          <div className="footer-bottom-tag">
+            <span>Cambridge & Edexcel IGCSE Mathematics Mentorship</span>
+          </div>
         </div>
 
       </div>

@@ -5,16 +5,16 @@ import { ChevronsRight } from 'lucide-react';
 export default function AnnouncementsSection({ onOpenDemo }) {
   const announcements = [
     {
-      text: 'CBSE Class 9th & 10th Super Foundation Batch—Personal Mentorship by Anu Mam (Batch Date: 29th July 2026)',
-      link: 'CBSE Class 9 & 10 Foundation'
+      text: 'Cambridge IGCSE Extended Math (0580) Live Batch — Personal Mentorship by Anu Mam (Batch Date: 29th July 2026)',
+      link: 'IGCSE Extended Math (0580)'
     },
     {
-      text: 'IGCSE Grade 9 & 10 Extended Mathematics & Science Interactive Batch (Batch Date: 29th July 2026)',
-      link: 'IGCSE Grade 9 & 10 Extended Math'
+      text: 'IGCSE Additional Mathematics (0606) Intensive Calculus & Trig Batch (Batch Date: 29th July 2026)',
+      link: 'IGCSE Additional Math (0606)'
     },
     {
-      text: 'Class 6th to 8th STEM, Reasoning & Problem Solving Batch Admissions Open',
-      link: 'Class 6th to 8th STEM'
+      text: 'Cambridge Lower Secondary Checkpoint (Grades 6–8) Foundation Admissions Open',
+      link: 'Cambridge Checkpoint (Grades 6–8)'
     }
   ];
 
@@ -29,7 +29,7 @@ export default function AnnouncementsSection({ onOpenDemo }) {
               Announcements
             </h2>
             <p>
-              Stay updated with Anu Mam&apos;s upcoming CBSE & IGCSE batches (Classes 6th to 10th), personal doubt sessions, and interactive problem-solving workshops.
+              Stay updated with Anu Mam&apos;s upcoming Cambridge IGCSE (0580 & 0606) live batches (Grades 6th to 10th), topical past paper sessions, and Cambridge examiner mark-scheme workshops.
             </p>
           </div>
 

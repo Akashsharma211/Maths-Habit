@@ -109,7 +109,7 @@ export default function HeroSection({ activeRole = 'student', onOpenDemo, onRole
 
           <div className="hero-mentor-image-box">
             <img 
-              src="/assets/anu_teacher.png" 
+              src="/assets/mam_profile1.png" 
               alt="Anu Mam Cambridge IGCSE Mentor" 
               className="hero-mentor-portrait"
             />

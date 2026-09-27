@@ -2,15 +2,15 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { 
-  User, 
-  Users, 
-  Lock, 
-  Mail, 
-  ArrowLeft, 
-  CheckCircle2, 
-  AlertCircle, 
-  Sparkles, 
+import {
+  User,
+  Users,
+  Lock,
+  Mail,
+  ArrowLeft,
+  CheckCircle2,
+  AlertCircle,
+  Sparkles,
   ArrowRight,
   BookOpen,
   Phone,
@@ -21,7 +21,7 @@ import {
 export default function LoginPage() {
   const [role, setRole] = useState('student'); // 'student' | 'parent'
   const [isRegister, setIsRegister] = useState(false);
-  
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -43,6 +43,11 @@ export default function LoginPage() {
       if (urlRole === 'parent' || urlRole === 'student') {
         setRole(urlRole);
       }
+
+      const urlAction = urlParams.get('action');
+      if (urlAction === 'register') {
+        setIsRegister(true);
+      }
     }
   }, []);
 
@@ -52,7 +57,7 @@ export default function LoginPage() {
     setFeedback(null);
 
     const endpoint = isRegister ? '/api/auth/register' : '/api/auth/login';
-    const payload = isRegister 
+    const payload = isRegister
       ? { ...formData, role }
       : { email: formData.email, password: formData.password, role };
 
@@ -72,9 +77,9 @@ export default function LoginPage() {
         setFeedback({ type: 'error', text: data.message || 'Authentication failed. Please check your details.' });
       }
     } catch (err) {
-      setFeedback({ 
-        type: 'error', 
-        text: 'Could not connect to server/database. Please verify your connection.' 
+      setFeedback({
+        type: 'error',
+        text: 'Could not connect to server/database. Please verify your connection.'
       });
     } finally {
       setLoading(false);
@@ -85,7 +90,7 @@ export default function LoginPage() {
 
   return (
     <main className="login-page-wrapper">
-      
+
       {/* Background Ambient Glow Gradients */}
       <div className="login-bg-glow glow-1" />
       <div className="login-bg-glow glow-2" />
@@ -114,7 +119,7 @@ export default function LoginPage() {
       </header>
 
       <div className="container login-main-container">
-        
+
         {loggedInUser ? (
           /* Logged In Interactive Dashboard Preview */
           <div className="login-dashboard-card">
@@ -151,7 +156,7 @@ export default function LoginPage() {
 
             <div className="dashboard-action-row">
               <Link href="/" className="btn-dash-home">Return to Homepage</Link>
-              <button 
+              <button
                 className="btn-dash-logout"
                 onClick={() => {
                   setLoggedInUser(null);
@@ -165,10 +170,10 @@ export default function LoginPage() {
         ) : (
           /* Login / Register Glass Card */
           <div className="login-card-wrapper">
-            
+
             {/* Unified Role Capsule Switcher */}
             <div className="login-role-selector">
-              <button 
+              <button
                 type="button"
                 className={`login-role-btn ${role === 'student' ? 'role-active-student' : ''}`}
                 onClick={() => { setRole('student'); setFeedback(null); }}
@@ -177,7 +182,7 @@ export default function LoginPage() {
                 <span>Student Portal</span>
               </button>
 
-              <button 
+              <button
                 type="button"
                 className={`login-role-btn ${role === 'parent' ? 'role-active-parent' : ''}`}
                 onClick={() => { setRole('parent'); setFeedback(null); }}
@@ -188,15 +193,15 @@ export default function LoginPage() {
             </div>
 
             <div className="login-glass-card">
-              
+
               <div className="login-card-head">
                 <div className={`portal-icon-circle ${isParent ? 'circle-parent' : 'circle-student'}`}>
                   {isParent ? <Users size={24} /> : <GraduationCap size={24} />}
                 </div>
                 <h3>{isRegister ? `Create ${isParent ? 'Parent' : 'Student'} Account` : `${isParent ? 'Parent' : 'Student'} Portal Log In`}</h3>
                 <p>
-                  {isParent 
-                    ? 'Monitor your child’s weekly Cambridge IGCSE marks, homework, and attendance.' 
+                  {isParent
+                    ? 'Monitor your child’s weekly Cambridge IGCSE marks, homework, and attendance.'
                     : 'Access live interactive classes, HD lecture recordings, and past paper worksheets.'}
                 </p>
               </div>
@@ -210,15 +215,15 @@ export default function LoginPage() {
               )}
 
               <form onSubmit={handleSubmit} className="login-form">
-                
+
                 {isRegister && (
                   <div className="auth-field">
                     <label>{isParent ? 'Parent Full Name *' : 'Student Full Name *'}</label>
                     <div className="auth-input-wrap">
                       <User size={16} className="auth-icon" />
-                      <input 
-                        type="text" 
-                        required 
+                      <input
+                        type="text"
+                        required
                         placeholder={isParent ? 'e.g. Robert Henderson' : 'e.g. Alex Henderson'}
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -231,9 +236,9 @@ export default function LoginPage() {
                   <label>Email Address *</label>
                   <div className="auth-input-wrap">
                     <Mail size={16} className="auth-icon" />
-                    <input 
-                      type="email" 
-                      required 
+                    <input
+                      type="email"
+                      required
                       placeholder="e.g. student@mathshabit.com"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -245,9 +250,9 @@ export default function LoginPage() {
                   <label>Password *</label>
                   <div className="auth-input-wrap">
                     <Lock size={16} className="auth-icon" />
-                    <input 
-                      type="password" 
-                      required 
+                    <input
+                      type="password"
+                      required
                       placeholder="••••••••"
                       value={formData.password}
                       onChange={(e) => setFormData({ ...formData, password: e.target.value })}
@@ -261,9 +266,9 @@ export default function LoginPage() {
                       <label>WhatsApp / Mobile Number *</label>
                       <div className="auth-input-wrap">
                         <Phone size={16} className="auth-icon" />
-                        <input 
-                          type="tel" 
-                          required 
+                        <input
+                          type="tel"
+                          required
                           placeholder="+44 7700 900077"
                           value={formData.phone}
                           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
@@ -275,7 +280,7 @@ export default function LoginPage() {
                       <label>{isParent ? "Child's IGCSE Program" : 'Target IGCSE Level'}</label>
                       <div className="auth-input-wrap">
                         <BookOpen size={16} className="auth-icon" />
-                        <select 
+                        <select
                           value={formData.grade}
                           onChange={(e) => setFormData({ ...formData, grade: e.target.value })}
                         >
@@ -290,8 +295,8 @@ export default function LoginPage() {
                   </>
                 )}
 
-                <button 
-                  type="submit" 
+                <button
+                  type="submit"
                   disabled={loading}
                   className={`auth-submit-btn ${isParent ? 'btn-parent-theme' : 'btn-student-theme'}`}
                 >
@@ -309,22 +314,22 @@ export default function LoginPage() {
               <div className="auth-card-footer">
                 <p>
                   {isRegister ? 'Already have an account?' : "Don't have an account yet?"}{' '}
-                  <button 
-                    type="button" 
+                  <button
+                    type="button"
                     className="auth-switch-mode-btn"
                     onClick={() => {
                       setIsRegister(!isRegister);
                       setFeedback(null);
                     }}
                   >
-                    {isRegister ? 'Log in here' : 'Register with MongoDB'}
+                    {isRegister ? 'Log in here' : 'Sign up'}
                   </button>
                 </p>
 
-                <div className="auth-security-badge">
+                {/* <div className="auth-security-badge">
                   <Shield size={13} />
                   <span>Secured MongoDB Cloud Authentication</span>
-                </div>
+                </div> */}
               </div>
 
             </div>

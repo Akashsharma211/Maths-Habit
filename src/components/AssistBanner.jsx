@@ -19,7 +19,7 @@ export default function AssistBanner({ onOpenDemo }) {
 
           <div className="assist-counsellor-arch">
             <img 
-              src="/assets/anu_teacher.png" 
+              src="/assets/for_fotter_side.png" 
               alt="Academic Counsellor Anu Mam" 
               className="counsellor-img"
             />

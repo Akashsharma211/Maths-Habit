@@ -40,7 +40,7 @@ export default function MeetAnuPage() {
   return (
     <main style={{ backgroundColor: '#FFFFFF', minHeight: '100vh' }}>
       <Header activeRole={activeRole} onRoleChange={handleRoleChange} />
-      
+
       {/* Back to Home Breadcrumb Bar */}
       <div style={{ background: '#FAF9F6', padding: '1rem 0', borderBottom: '1px solid #E6F7F5' }}>
         <div className="container" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
@@ -55,14 +55,14 @@ export default function MeetAnuPage() {
       {/* Meet Anu Dedicated Content */}
       <WhoIsAnu onOpenDemo={handleOpenDemo} />
       <AssistBanner onOpenDemo={handleOpenDemo} />
-      
+
       <Footer />
 
       <FloatingWidgets />
 
-      <DemoModal 
-        isOpen={demoModalOpen} 
-        onClose={() => setDemoModalOpen(false)} 
+      <DemoModal
+        isOpen={demoModalOpen}
+        onClose={() => setDemoModalOpen(false)}
         courseTitle={selectedCourse}
         onToast={triggerToast}
       />

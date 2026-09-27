@@ -5,7 +5,7 @@ import Header from '../components/Header';
 import HeroSection from '../components/HeroSection';
 import WhoIsAnu from '../components/WhoIsAnu';
 import CoursesSection from '../components/CoursesSection';
-import AnnouncementsSection from '../components/AnnouncementsSection';
+
 import WhyStandsOutSection from '../components/WhyStandsOutSection';
 import AssistBanner from '../components/AssistBanner';
 import Footer from '../components/Footer';
@@ -46,16 +46,16 @@ export default function Home() {
       <HeroSection activeRole={activeRole} onOpenDemo={handleOpenDemo} onRoleChange={handleRoleChange} />
       <WhoIsAnu onOpenDemo={handleOpenDemo} isHomePage={true} />
       <CoursesSection onOpenDemo={handleOpenDemo} />
-      <AnnouncementsSection onOpenDemo={handleOpenDemo} />
+
       <WhyStandsOutSection />
       <AssistBanner onOpenDemo={handleOpenDemo} />
       <Footer />
 
       <FloatingWidgets />
 
-      <DemoModal 
-        isOpen={demoModalOpen} 
-        onClose={() => setDemoModalOpen(false)} 
+      <DemoModal
+        isOpen={demoModalOpen}
+        onClose={() => setDemoModalOpen(false)}
         courseTitle={selectedCourse}
         onToast={triggerToast}
       />

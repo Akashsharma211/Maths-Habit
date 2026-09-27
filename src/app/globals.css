@@ -754,7 +754,7 @@ a {
   height: 420px;
   width: auto;
   object-fit: contain;
-  object-position: right center;
+  object-position: right bottom;
   transform: translateX(16px);
   filter: drop-shadow(0 16px 32px rgba(0,0,0,0.15));
 }
